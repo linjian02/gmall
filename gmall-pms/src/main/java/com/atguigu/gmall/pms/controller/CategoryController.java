@@ -2,6 +2,7 @@ package com.atguigu.gmall.pms.controller;
 
 import java.util.List;
 
+import com.sun.tracing.dtrace.ProviderAttributes;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,6 +35,13 @@ public class CategoryController {
     @Autowired
     private CategoryService categoryService;
 
+
+    @GetMapping("parent/{parentId}")
+    public ResponseVo<List<CategoryEntity>>queryCategoriesByPid(@PathVariable ("parentId") Long pid){
+       List<CategoryEntity> categoryEntities= this.categoryService.queryCategoriesByPid(pid);
+       return ResponseVo.ok(categoryEntities);
+
+    }
     /**
      * 列表
      */

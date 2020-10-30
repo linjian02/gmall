@@ -1,5 +1,5 @@
 server:
-  port: 18081
+  port: 18084
 spring:
   cloud:
     nacos:
@@ -26,8 +26,8 @@ spring:
     sampler:
       probability: 1
 mybatis-plus:
-  mapper-locations: classpath:mapper/pms/*.xml
-  type-aliases-package: com.atguigu.gmall.pms.entity
+  mapper-locations: classpath:mapper/wms/*.xml
+  type-aliases-package: com.atguigu.gmall.wms.entity
   global-config:
     db-config:
       id-type: auto
